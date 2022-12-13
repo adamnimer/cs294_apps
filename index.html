@@ -1,24 +1,187 @@
 <!DOCTYPE html>
 <html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>CS294 Final Project</title>
+      <link href="style.css" rel="stylesheet" type="text/css" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+      <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+      <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+     <link rel="manifest" href="/manifest.json">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   </head>
+   <body>
+      <div class="mdc-tab-bar" role="tablist">
+         <div class="mdc-tab-scroller">
+            <div class="mdc-tab-scroller__scroll-area">
+               <div class="mdc-tab-scroller__scroll-content">
+                  <button onclick="home()" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                     <span class="mdc-tab__content">
+                     <span class="mdc-tab__icon material-icons" aria-hidden="true">home</span>
+                     <span class="mdc-tab__text-label">Home</span>
+                     </span>
+                     <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                     <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                     </span>
+                     <span class="mdc-tab__ripple"></span>
+                     <div class="mdc-tab__focus-ring"></div>
+                  </button>
+                  <button onclick="grades()" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                     <span class="mdc-tab__content">
+                     <span class="mdc-tab__icon material-icons" aria-hidden="true">grades</span>
+                     <span class="mdc-tab__text-label">Grades</span>
+                     </span>
+                     <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                     <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                     </span>
+                     <span class="mdc-tab__ripple"></span>
+                     <div class="mdc-tab__focus-ring"></div>
+                  </button>
+                  <button onclick="weather()" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                     <span class="mdc-tab__content">
+                     <span class="mdc-tab__icon material-icons" aria-hidden="true">sunny</span>
+                     <span class="mdc-tab__text-label">Weather</span>
+                     </span>
+                     <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                     <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                     </span>
+                     <span class="mdc-tab__ripple"></span>
+                     <div class="mdc-tab__focus-ring"></div>
+                  </button>
+                  <button onclick="storedData()" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                     <span class="mdc-tab__content">
+                     <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span>
+                     <span class="mdc-tab__text-label">Stored Data</span>
+                     </span>
+                     <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                     <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                     </span>
+                     <span class="mdc-tab__ripple"></span>
+                     <div class="mdc-tab__focus-ring"></div>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="script.js"></script>
+      <script type="text/javascript">
+         window.onload = function () { 
+             home();
+         }
+      </script>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <a href="mapTrail/index.html"<h3>Hello</h3></a>
-</head>
 
-<body>
-  Hello world
-  <script src="script.js"></script>
+      <div id="home" class="home">
 
- <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
-</body>
+        </br> </br> </br> </br> </br>
+    <h3 class="mdc-typography--headline3">USE THE ABOVE TABS TO GO TO YOUR DESIRED PAGE.</h3>
+         </br> </br>
+        <h5 class="mdc-typography--headline5"> There are 4 screens that you can naviage from and to. 
 
+1. Home Screen.
+2. Grade Distributions Screen: This screen reuqires the Grade Distribution API that I created to be on, so if the grade data is not loading, the API is off. 
+3. Weather Screen: This page shows the weather for specific chicago coordinates. This is also calling an API to get the weather data info.
+4. Stored Data: This screen will display all the search history for your searches on the Grade Distributions page. </h5>
+      </div>
+
+
+
+     
+      <div id="grades" class="grades">
+         <!-- <header class="mdc-top-app-bar" style="background-color: #09adc3">
+            <div class="mdc-top-app-bar__row">
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <span class="mdc-top-app-bar__title">UIC Grade Distribution</span>
+              </section>
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button  onclick="heart()" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="heart" aria-label="Favorite">favorite</button>
+              </section>
+            </div>
+            </header>
+            <main class="mdc-top-app-bar--fixed-adjust">
+            </main>
+               
+                </br>
+                </br> -->
+         <div class="screen">
+            </br></br></br></br></br>
+            <!-- Directions -->
+            <figure>
+               <blockquote class="mdc-typography--headline5">
+                  <p>Enter your desired subject abbreviation, 
+                     course number, and semester. The format looks like this: 'MATH' '210' 'SP22'.
+                  </p>
+               </blockquote>
+            </figure>
+            </br>
+            </br>
+            </br>
+            <!-- Subject button -->
+            <div class="form-floating">
+               <textarea class="form-control" placeholder="hello" id="subject"></textarea>
+               <label for="floatingTextarea">Subject</label>
+            </div>
+            <!-- Course Number button -->
+            <div class="form-floating">
+               <textarea class="form-control" placeholder="hello" id="course_num"></textarea>
+               <label for="floatingTextarea">Course Number</label>
+            </div>
+            <!-- Semester button -->
+            <div class="form-floating">
+               <textarea class="form-control" placeholder="hello" id="semester"></textarea>
+               <label for="floatingTextarea" >Semester</label>
+            </div>
+            <!-- Fix spacing -->
+            </br>
+            </br>
+            </br>
+            </br>
+            <div>
+               <!-- Search button -->
+               <button onclick="search()" class="button" style="vertical-align:middle" ><span>Search</span></button>
+            </div>
+            </br>   </br>   </br>   </br>
+            <!-- Data chart -->
+            <div id="donutchart" style="width: 450px; height: 250px;"></div>
+         </div>
+         <!-- Message alert for heart button -->
+         <div class="mdc-dialog">
+            <div class="mdc-dialog__container">
+               <div class="mdc-dialog__surface"
+                  role="alertdialog"
+                  aria-modal="true"
+                  aria-labelledby="my-dialog-title"
+                  aria-describedby="my-dialog-content">
+                  <div class="mdc-dialog__content" id="my-dialog-content">
+                     Created by Adam Nimer (:
+                  </div>
+                  <div class="mdc-dialog__actions">
+                     <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">Go Back</span>
+                     </button>
+                  </div>
+               </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+         </div>
+      </div>
+
+     
+      <div id="weather" class="weather">
+      </div>
+
+     
+      <div id="storedData" class="storedData">
+        </br> </br>
+         <h1 class="mdc-typography--headline3">Recent Searches for Grade Distributions:</h1>
+        </br>
+      </div>
+
+
+     
+   </body>
 </html>
