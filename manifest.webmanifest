@@ -1,17 +1,7 @@
 {
-  "name": "My App",
-  "short_name": "My App",
+  "name": "Big Project",
+  "short_name": "Project",
   "icons": [
-    {
-      "src": "icon-48x48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    }
   ],
   "start_url": "/index.html",
   "display": "standalone"
