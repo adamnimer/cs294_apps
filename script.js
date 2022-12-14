@@ -295,6 +295,26 @@ function clearStoredData(){
 }
 
 
+function getLocation() {
+   var div = document.createElement('div');
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    div.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  
+  var div = document.createElement('div');
+  div.setAttribute("class", "mdc-typography--headline5");
+  div.setAttribute("id", "coords");  
+  div.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+  document.body.appendChild(div);
+}
+
+
 
 function home(){
   console.log("home")

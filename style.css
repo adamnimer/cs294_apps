@@ -148,3 +148,7 @@ word-wrap: break-word;
 .home {
   text-align:center;
 }
+
+#coords {
+  text-align:center;
+}
