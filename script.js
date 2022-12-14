@@ -315,12 +315,25 @@ function showPosition(position) {
 }
 
 
+function clearCoords(){
+  const removeDiv = document.querySelectorAll('#coords')
+
+    removeDiv.forEach(element => {
+    element.remove();
+  });
+
+  
+}
+
+
 
 function home(){
   console.log("home")
   clear(); //clears any grade data
   clearWeather();
   clearStoredData();
+  clearCoords();
+  getLocation();
   //hide and show respective pages
   var weather = document.getElementById("weather").hidden = true;
     var data = document.getElementById("storedData").hidden = true;
@@ -335,6 +348,7 @@ function grades(){
   console.log("grades")
   clearWeather();
   clearStoredData();
+  clearCoords();
   var home = document.getElementById("home").hidden = true;
   var weather = document.getElementById("weather").hidden = true;
   var data = document.getElementById("storedData").hidden = true;
@@ -347,6 +361,7 @@ function weather(){
   clear(); //clears any grade data
   //hide and show respective pages
   clearStoredData();
+  clearCoords();
   console.log("weather")
   var home = document.getElementById("home").hidden = true;
   var gradesScreen = document.getElementById("grades").hidden = true;
@@ -361,6 +376,7 @@ function weather(){
 function storedData(){
   clear(); //clears any grade data
   clearWeather();
+  clearCoords();
   if(countDBID > 1)
   storedDataDisplay();
   //hide and show respective pages
@@ -370,8 +386,3 @@ function storedData(){
   var grades = document.getElementById("grades").hidden= true;
   var data = document.getElementById("storedData").hidden = false;
 }
-
-
-
-
-         // showD.innerHTML += data.response[idNum].class_title + ": " + "A: " + data.response[idNum].A + " B: " + data.response[idNum].B + " C: " + data.response[idNum].C + " D: " + data.response[idNum].D + " F: " + data.response[idNum].F + " Instructor: " + data.response[idNum].instructor; 
